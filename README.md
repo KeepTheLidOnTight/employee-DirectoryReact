@@ -1,2 +1,2 @@
 # employee-DirectoryReact
-An employee directory made using React
+An employee directory made using React. 
