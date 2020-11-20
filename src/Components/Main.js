@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "../Components/Header";
+import Header from "./Jumbotron";
 import Table from "../Components/Table";
 import Search from "../Components/Search";
 import API from "../Utils/API";
