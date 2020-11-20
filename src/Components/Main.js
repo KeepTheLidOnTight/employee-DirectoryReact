@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../Components/Header";
 import Table from "../Components/Table";
 import Search from "../Components/Search";
-import API from "../API";
+import API from "../Utils/API";
 
 class Index extends Component {
   state = {
@@ -23,7 +23,7 @@ class Index extends Component {
       .catch((err) => console.log(err));
   }
 
-  // handles search input, adjusts value on the fly
+  //search input
   handleInputChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -32,7 +32,7 @@ class Index extends Component {
     });
   };
 
-  // filter on click search button, returns employees by name containing search term
+  // filter on click search button
   handleFormSubmit = (event) => {
     event.preventDefault();
     const filtered = this.state.allResults.filter((result) => {
@@ -45,7 +45,7 @@ class Index extends Component {
     this.setState({ filteredResults: filtered });
   };
 
-  // sorting results by name
+  // sorting results 
   handleSort = (event) => {
     event.preventDefault();
 
