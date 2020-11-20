@@ -3,15 +3,20 @@ import "./Search.css";
 
 function Search(props) {
   return (
-    <search className="col-4 d-inline">
-      <input
+    <Search className="col-4 d-inline">
+        <form>
+            <input
             value={props.value}
             onChange={props.handleInputChange}
             className="form-control mb-3" 
             type="text" 
             placeholder="Search for an Employee" 
             />
-    </search>
+            <button
+            onClick={props.handleFormSubmit}
+            className="btn btn-primary mt-4">Search!</button>
+            </form>
+    </Search>
   );
 }
 
