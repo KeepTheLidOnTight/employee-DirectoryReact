@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import SearchInput from "./Components/Usersearch";
-import SearchResults from "./Components/Results";
+import Usersearch from "./Usersearch";
+import Results from "./Results";
 import API from "../Utils/API";
 
 // class component
@@ -14,7 +14,7 @@ class SearchContainer extends Component {
 
     //component did mount
     componentDidMount(){
-        API.getAllEmployees()
+        API.get()
         .then(res => {
             const cleanData = res.data.results.map(emp => ({
                 ...emp,
@@ -30,7 +30,6 @@ class SearchContainer extends Component {
     // handler for searching
     handleInputChange = event => {
         let value = event.target.value;
-        console.log("handleInputChange function running");
    
         this.setState({ 
             search : value 
@@ -65,11 +64,11 @@ class SearchContainer extends Component {
 
         return (
             <div>
-                <SearchInput
+                <Usersearch
                   search={this.state.search}                       
                   handleInputChange={this.handleInputChange}
                 />
-                <SearchResults 
+                <Results 
                     search={this.state.search}                      
                     empResults={this.state.empResult}
                     handleSortName={this.handleSortName}
