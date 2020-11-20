@@ -1,9 +1,17 @@
 import React from "react";
-import Main from "./Components/Main"
+import Jumbotron from "./components/Jumbotron/Jumbotron";
+import Wrapper from "./components/Wrapper/Wrapper";
+import SearchContainer from "./components/SearchContainer/SearchContainer";
 
-// component
+// Originally had a header and table file but editing to make use of wrapper
 function App() {
-  return (<Main></Main>)
-  }
+    document.title = "Find an Employee";
+    return (
+        <Wrapper>
+            <Jumbotron />
+            <SearchContainer />
+        </Wrapper>
+    );
+};
 
 export default App;
